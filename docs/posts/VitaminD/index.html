@@ -9,7 +9,7 @@
 <meta name="author" content="Sidharth Malik">
 <meta name="dcterms.date" content="2026-01-14">
 
-<title>Vitamin D Deficiency Through Data Science – Data Science Blog</title>
+<title>Understanding Vitamin D Deficiency Through Data Science – Data Science Blog</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -119,10 +119,11 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Vitamin D Deficiency Through Data Science</h1>
+      <h1 class="title">Understanding Vitamin D Deficiency Through Data Science</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">news</div>
+                <div class="quarto-category">Vitamin D</div>
                 <div class="quarto-category">Data Science</div>
+                <div class="quarto-category">Public Health</div>
               </div>
                   </div>
   </div>
@@ -151,7 +152,23 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#why-vitamin-d-deficiency-is-a-seasonal-issue" id="toc-why-vitamin-d-deficiency-is-a-seasonal-issue" class="nav-link" data-scroll-target="#why-vitamin-d-deficiency-is-a-seasonal-issue">Why Vitamin D Deficiency Is a Seasonal Issue</a></li>
+  <li><a href="#why-averages-can-be-misleading" id="toc-why-averages-can-be-misleading" class="nav-link" data-scroll-target="#why-averages-can-be-misleading">Why Averages Can Be Misleading</a></li>
+  <li><a href="#exploring-the-data-seasonal-trends-and-comparisons" id="toc-exploring-the-data-seasonal-trends-and-comparisons" class="nav-link" data-scroll-target="#exploring-the-data-seasonal-trends-and-comparisons">Exploring the Data: Seasonal Trends and Comparisons</a></li>
+  <li><a href="#adding-predictive-insight-with-data-science" id="toc-adding-predictive-insight-with-data-science" class="nav-link" data-scroll-target="#adding-predictive-insight-with-data-science">Adding Predictive Insight with Data Science</a></li>
+  <li><a href="#supporting-targeted-public-health-decisions" id="toc-supporting-targeted-public-health-decisions" class="nav-link" data-scroll-target="#supporting-targeted-public-health-decisions">Supporting Targeted Public Health Decisions</a></li>
+  <li><a href="#why-this-is-a-data-science-problem" id="toc-why-this-is-a-data-science-problem" class="nav-link" data-scroll-target="#why-this-is-a-data-science-problem">Why This Is a Data Science Problem</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -159,41 +176,83 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="understanding-seasonal-vitamin-d-deficiency-through-data-science" class="level1">
-<h1>Understanding Seasonal Vitamin D Deficiency Through Data Science</h1>
-<p>Vitamin D plays an essential role in bone health, immune function, and overall well-being. Unlike many nutrients, vitamin D is produced in the body primarily through exposure to sunlight. As a result, vitamin D levels are closely linked to environmental factors such as season, latitude, and lifestyle. In countries like Canada, especially in cities such as Vancouver, sunlight exposure varies substantially throughout the year, leading to strong seasonal patterns in vitamin D deficiency. Research using Canadian population health surveys has shown that vitamin D deficiency rates can increase from roughly 15% in summer to over 40% during winter months, with even higher rates observed among older adults and individuals with limited outdoor activity. Despite these clear seasonal trends, public health recommendations around vitamin D supplementation are often broad and uniform throughout the year. This raises an important question: can data science help identify who is most at risk of vitamin D deficiency, and when?</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Vitamin D plays an essential role in bone health, immune function, and overall well-being. Unlike many nutrients, vitamin D is produced in the body primarily through exposure to sunlight. Because of this, vitamin D levels are strongly influenced by environmental factors such as season, latitude, and lifestyle.</p>
+<p>In countries like Canada, and particularly in cities such as Vancouver, sunlight exposure varies substantially throughout the year. This leads to noticeable seasonal patterns in vitamin D deficiency. Despite this, public health recommendations around vitamin D supplementation are often broad and uniform throughout the year. This raises an important question: <strong>can data science help identify who is most at risk of vitamin D deficiency, and when?</strong></p>
+<hr>
+</section>
 <section id="why-vitamin-d-deficiency-is-a-seasonal-issue" class="level2">
 <h2 class="anchored" data-anchor-id="why-vitamin-d-deficiency-is-a-seasonal-issue">Why Vitamin D Deficiency Is a Seasonal Issue</h2>
-<p>Vitamin D synthesis depends on exposure to ultraviolet B (UVB) radiation from sunlight. During summer, longer days and higher sun angles make it easier for individuals to maintain sufficient vitamin D levels. In contrast, during fall and winter, UVB exposure drops sharply, especially in northern latitudes. In Canada, studies have reported that average vitamin D levels decline steadily from late fall through early spring, reaching their lowest point between January and March. Older adults are particularly affected; some studies suggest that winter deficiency rates among adults over 65 can exceed 45%, compared to much lower rates in younger populations during summer months. Vancouver presents an interesting case. While the city experiences relatively mild winters, frequent cloud cover and shorter daylight hours limit effective sunlight exposure. This means that even compared to other Canadian cities at similar latitudes, residents of Vancouver may face a sustained seasonal risk of vitamin D deficiency.</p>
+<p>Vitamin D synthesis depends on exposure to ultraviolet B (UVB) radiation from sunlight. During summer months, longer days and higher sun angles make it easier for individuals to maintain sufficient vitamin D levels. In contrast, during fall and winter, UVB exposure drops sharply, especially at northern latitudes.</p>
+<p>Statistics Canada data from the Canadian Health Measures Survey (CHMS) show clear seasonal differences in vitamin D status. Approximately <strong>40% of Canadians have vitamin D levels below recommended thresholds during winter</strong>, compared to <strong>around 25% during summer</strong>.</p>
+<p>Source:<br>
+Statistics Canada — <em>Vitamin D blood levels of Canadians</em><br>
+https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/11727-eng.htm</p>
+<p>Older adults are particularly affected. Some studies report that winter deficiency rates among adults over the age of 65 can exceed <strong>45%</strong>, while rates among younger adults are substantially lower during summer months.</p>
+<p>Vancouver presents an interesting case. While the city experiences relatively mild winters, frequent cloud cover and shorter daylight hours limit effective sunlight exposure. As a result, residents may face sustained seasonal risk even compared to other Canadian cities at similar latitudes.</p>
+<hr>
 </section>
 <section id="why-averages-can-be-misleading" class="level2">
 <h2 class="anchored" data-anchor-id="why-averages-can-be-misleading">Why Averages Can Be Misleading</h2>
-<p>Public health summaries often rely on annual averages to describe population health. While useful, averages can hide important variation. For example, an annual average vitamin D level might suggest that a population is generally sufficient, even if a large portion of individuals experience deficiency for several months each year. This is where data science becomes valuable. Instead of relying on a single summary statistic, data science encourages us to examine how values change over time and across groups. By breaking the data down by season, age group, or location, we can uncover patterns that are invisible in aggregated averages. For instance, a population-level average may appear stable, while subgroup analysis reveals that winter deficiency rates among seniors are twice as high as those among younger adults.</p>
+<p>Public health summaries often rely on annual averages to describe population health. While averages are useful, they can hide important variation.</p>
+<p>For example, an annual average vitamin D level might suggest that a population is generally sufficient. However, this same population may experience several months each year where a large fraction of individuals are deficient. In other words, <strong>a stable average can mask seasonal risk</strong>.</p>
+<p>Data science encourages us to move beyond single summary statistics. By examining how values change over time and across subgroups, we can uncover patterns that are invisible in aggregated data. For instance, subgroup analysis may reveal that winter deficiency rates among seniors are nearly double those of younger adults, even if the overall population average appears acceptable.</p>
+<hr>
 </section>
 <section id="exploring-the-data-seasonal-trends-and-comparisons" class="level2">
 <h2 class="anchored" data-anchor-id="exploring-the-data-seasonal-trends-and-comparisons">Exploring the Data: Seasonal Trends and Comparisons</h2>
-<p>A natural first step in a data science workflow is exploratory data analysis (EDA). In the context of vitamin D deficiency, this might involve grouping measurements by month or season and comparing trends across demographic groups. One effective visualization is a line chart showing average vitamin D levels across the year. Such a chart typically shows higher levels during summer, followed by a sharp decline in fall and a trough in winter. Plotting separate lines for different age groups often reveals that older adults experience both lower overall levels and steeper seasonal drops. Another useful comparison is geographic. A bar chart comparing winter deficiency rates across regions can highlight how location influences risk. For example, winter deficiency rates may be noticeably higher in coastal or northern regions compared to sunnier southern areas. These visualizations make seasonal risk patterns immediately clear and accessible, even to a non-technical audience. Instead of abstract statistics, viewers can see exactly when and where deficiency becomes most common.</p>
+<p>A natural first step in a data science workflow is <strong>exploratory data analysis (EDA)</strong>. In the context of vitamin D deficiency, this might involve grouping vitamin D measurements by month or season and comparing trends across demographic groups.</p>
+<p>One effective visualization is a <strong>line chart</strong> showing average vitamin D levels across the year.</p>
+<p><em>Figure 1: Line chart showing average vitamin D levels by month, with higher values in summer and a clear decline during winter.</em></p>
+<p>Such a chart typically shows higher levels during summer months, followed by a steady decline in fall and a trough in winter. Plotting separate lines for different age groups often reveals that older adults experience both lower overall levels and steeper seasonal drops.</p>
+<p>Another useful comparison is geographic. A <strong>bar chart</strong> comparing winter deficiency rates across regions highlights how location influences risk.</p>
+<p><em>Figure 2: Bar chart comparing winter vitamin D deficiency rates across Canadian regions.</em></p>
+<p>Statistics Canada reports that severe deficiency (vitamin D levels below 30 nmol/L) more than <strong>doubles during winter</strong> compared to summer.</p>
+<p>Source:<br>
+Statistics Canada — <em>Shedding light on Canada’s vitamin D levels as we approach the shortest day of the year</em><br>
+https://www.statcan.gc.ca/o1/en/plus/5095-shedding-light-canadas-vitamin-d-levels-we-approach-shortest-day-year</p>
+<p>These visualizations make seasonal risk patterns immediately clear and accessible, even to a non-technical audience.</p>
+<hr>
 </section>
 <section id="adding-predictive-insight-with-data-science" class="level2">
 <h2 class="anchored" data-anchor-id="adding-predictive-insight-with-data-science">Adding Predictive Insight with Data Science</h2>
-<p>While exploratory analysis helps us understand existing patterns, data science also allows us to anticipate future risk. Using variables such as season, age, geographic location, and lifestyle factors, simple predictive models can estimate the likelihood of vitamin D deficiency during high-risk periods. For example, a logistic regression model could be used to estimate the probability that an individual’s vitamin D level falls below a recommended threshold during winter. These predictions would not be used for diagnosis, but rather to support population-level planning and prevention. Such a model might reveal that an older adult living in Vancouver has a substantially higher predicted risk of deficiency between November and March compared to a younger adult living in a sunnier region. This kind of insight allows public health officials to move from reactive to proactive strategies.</p>
+<p>While exploratory analysis helps us understand existing patterns, data science also allows us to <strong>anticipate future risk</strong>.</p>
+<p>Using variables such as season, age, geographic location, and lifestyle factors, simple predictive models can estimate the likelihood that an individual’s vitamin D level falls below recommended thresholds during high-risk periods.</p>
+<p>For example, a <strong>logistic regression model</strong> could estimate the probability that an individual experiences vitamin D deficiency during winter months. These predictions would not be used for medical diagnosis, but rather to support population-level planning and prevention.</p>
+<p>Such a model might show that an older adult living in Vancouver has a significantly higher predicted risk of deficiency between November and March compared to a younger adult living in a sunnier region. This insight allows public health agencies to move from reactive responses to proactive strategies.</p>
+<hr>
 </section>
 <section id="supporting-targeted-public-health-decisions" class="level2">
 <h2 class="anchored" data-anchor-id="supporting-targeted-public-health-decisions">Supporting Targeted Public Health Decisions</h2>
-<p>One of the main benefits of applying data science to this problem is the ability to design targeted interventions. Instead of issuing identical recommendations year-round, health authorities could adjust their guidance based on seasonal and demographic risk.</p>
-<p>For example: - Supplementation campaigns could be emphasized in early fall, before deficiency rates peak. - Educational efforts could focus on higher-risk groups such as seniors. - Regional recommendations could reflect differences in sunlight exposure and climate.</p>
-<p>Compared to a one-size-fits-all approach, these targeted strategies make more efficient use of resources and reduce the likelihood that vulnerable populations are overlooked.</p>
+<p>One of the main benefits of applying data science to this problem is the ability to design <strong>targeted interventions</strong>.</p>
+<p>Instead of issuing identical recommendations year-round, health authorities could adjust their guidance based on seasonal and demographic risk patterns identified through data analysis.</p>
+<p>Examples include: - Emphasizing supplementation campaigns in early fall, before deficiency rates peak - Focusing educational efforts on higher-risk groups such as seniors - Tailoring regional recommendations based on sunlight exposure and climate</p>
+<p>Compared to a one-size-fits-all approach, these targeted strategies allow for more efficient use of public health resources and reduce the likelihood that vulnerable populations are overlooked.</p>
+<hr>
 </section>
 <section id="why-this-is-a-data-science-problem" class="level2">
 <h2 class="anchored" data-anchor-id="why-this-is-a-data-science-problem">Why This Is a Data Science Problem</h2>
-<p>Although vitamin D deficiency is a health issue, the challenge lies in understanding patterns within complex, real-world data. Data science provides the tools to analyze these patterns, quantify risk, and translate findings into actionable insight. By combining environmental data, demographic information, and health measurements, even relatively simple models and visualizations can meaningfully improve public health decision-making. In this way, data science complements medical expertise by helping ensure that policies are informed by evidence rather than assumptions.</p>
+<p>Although vitamin D deficiency is a health issue, the challenge lies in understanding patterns within complex, real-world data. Data science provides the tools to analyze these patterns, quantify risk, and translate findings into actionable insights.</p>
+<p>By combining environmental data, demographic information, and health measurements, even relatively simple models and visualizations can meaningfully improve public health decision-making. In this way, data science complements medical expertise by ensuring that policies are informed by evidence rather than assumptions.</p>
+<hr>
 </section>
 <section id="key-takeaways" class="level2">
 <h2 class="anchored" data-anchor-id="key-takeaways">Key Takeaways</h2>
-<p>Vitamin D deficiency is strongly seasonal, particularly in regions with limited winter sunlight such as Canada. Relying solely on annual averages can mask periods of elevated risk and obscure vulnerable populations. Data science allows us to examine trends over time, compare groups, and anticipate future risk. Through exploratory analysis, visualization, and simple predictive modeling, data science supports more timely and targeted public health interventions. This approach helps ensure that recommendations are based on real patterns in the data, ultimately leading to better outcomes and more effective use of resources.</p>
-
-
+<p>Vitamin D deficiency is strongly seasonal, particularly in regions with limited winter sunlight such as Canada. Relying solely on annual averages can mask periods of elevated risk and obscure vulnerable populations.</p>
+<p>Data science allows us to examine trends over time, compare subgroups, and anticipate future risk. Through exploratory analysis, visualization, and simple predictive modeling, data science supports more timely and targeted public health interventions, leading to better-informed decisions and more effective use of resources.</p>
+<hr>
 </section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<ul>
+<li><p>Statistics Canada. <em>Vitamin D blood levels of Canadians.</em><br>
+https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/11727-eng.htm</p></li>
+<li><p>Statistics Canada. <em>Shedding light on Canada’s vitamin D levels as we approach the shortest day of the year.</em><br>
+https://www.statcan.gc.ca/o1/en/plus/5095-shedding-light-canadas-vitamin-d-levels-we-approach-shortest-day-year</p></li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->
