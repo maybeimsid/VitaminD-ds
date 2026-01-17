@@ -70,13 +70,6 @@
     "text": "Key Takeaways\nVitamin D deficiency is strongly seasonal, particularly in regions with limited winter sunlight such as Canada. Relying solely on annual averages can mask periods of elevated risk and obscure vulnerable populations.\nData science allows us to examine trends over time, compare subgroups, and anticipate future risk. Through exploratory analysis, visualization, and simple predictive modeling, data science supports more timely and targeted public health interventions, leading to better-informed decisions and more effective use of resources."
   },
   {
-    "objectID": "posts/VitaminD/index.html#references",
-    "href": "posts/VitaminD/index.html#references",
-    "title": "Understanding Vitamin D Deficiency Through Data Science",
-    "section": "References",
-    "text": "References\n\nStatistics Canada. Vitamin D blood levels of Canadians. Canadian Health Measures Survey (CHMS).\nhttps://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/11727-eng.htm\nStatistics Canada. Shedding light on Canada’s vitamin D levels as we approach the shortest day of the year.\nhttps://www.statcan.gc.ca/o1/en/plus/5095-shedding-light-canadas-vitamin-d-levels-we-approach-shortest-day-year"
-  },
-  {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",

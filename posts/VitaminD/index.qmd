@@ -3,11 +3,8 @@ title: "Understanding Vitamin D Deficiency Through Data Science"
 author: "Sidharth Malik"
 date: "2026-01-14"
 categories: [Vitamin D, Data Science, Public Health]
-image: "image.jpg"
-format:
-  html:
-    toc: true
-    toc-depth: 2
+image: "vitamind.jpg"
+bibliography: references.bib
 ---
 
 ## Introduction
@@ -50,14 +47,14 @@ A natural first step in a data science workflow is **exploratory data analysis (
 
 The chart below shows the **percentage of Canadians at selected vitamin D cut-offs by season**. According to Cycle 2 of the Canadian Health Measures Survey, about **40% of Canadians had vitamin D blood concentrations below the cut-off during winter**, compared with **25% in summer**. This pattern illustrates a strong seasonal effect that simple averages can hide, as a single yearly summary would not make clear when deficiency risk is highest.
 
-![Percentage of Canadians at selected vitamin D cut-offs, by season](https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/chart/11727-01-chart3-eng.htm)  
+![Percentage of Canadians at selected vitamin D cut-offs, by season](chart 1.gif)  
 *Figure: Percentage of Canadians at selected vitamin D cut-offs by season (Statistics Canada).* :contentReference[oaicite:0]{index=0}
 
 ### Age Differences in Vitamin D Status
 
 The chart below shows the **percentage of Canadians above and below a common vitamin D cut-off (50 nmol/L) by age group**. This visualization reveals that certain age groups have higher rates of sufficient vitamin D levels than others. For example, young children and seniors tend to have higher proportions above the cut-off compared with adults aged 20–39.
 
-![Percentage of Canadians above and below the 50 nmol/L cut-off, by age group](https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/chart/11727-01-chart1-eng.htm)  
+![Percentage of Canadians above and below the 50 nmol/L cut-off, by age group](chart 2.gif)  
 *Figure: Percentage of Canadians above and below the vitamin D cut-off (50 nmol/L) by age group (Statistics Canada).* :contentReference[oaicite:1]{index=1}
 
 Together, these charts make seasonal and demographic patterns in vitamin D status immediately clear.
@@ -104,13 +101,3 @@ By combining environmental data, demographic information, and health measurement
 Vitamin D deficiency is strongly seasonal, particularly in regions with limited winter sunlight such as Canada. Relying solely on annual averages can mask periods of elevated risk and obscure vulnerable populations.
 
 Data science allows us to examine trends over time, compare subgroups, and anticipate future risk. Through exploratory analysis, visualization, and simple predictive modeling, data science supports more timely and targeted public health interventions, leading to better-informed decisions and more effective use of resources.
-
----
-
-## References
-
-- Statistics Canada. *Vitamin D blood levels of Canadians.* Canadian Health Measures Survey (CHMS).  
-  https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/11727-eng.htm
-
-- Statistics Canada. *Shedding light on Canada’s vitamin D levels as we approach the shortest day of the year.*  
-  https://www.statcan.gc.ca/o1/en/plus/5095-shedding-light-canadas-vitamin-d-levels-we-approach-shortest-day-year
