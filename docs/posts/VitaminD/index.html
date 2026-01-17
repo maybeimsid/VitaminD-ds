@@ -22,7 +22,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -75,7 +95,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -152,7 +172,26 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#why-vitamin-d-deficiency-is-a-seasonal-issue" id="toc-why-vitamin-d-deficiency-is-a-seasonal-issue" class="nav-link" data-scroll-target="#why-vitamin-d-deficiency-is-a-seasonal-issue">Why Vitamin D Deficiency Is a Seasonal Issue</a></li>
+  <li><a href="#why-averages-can-be-misleading" id="toc-why-averages-can-be-misleading" class="nav-link" data-scroll-target="#why-averages-can-be-misleading">Why Averages Can Be Misleading</a></li>
+  <li><a href="#exploring-the-data-real-seasonal-and-age-comparisons" id="toc-exploring-the-data-real-seasonal-and-age-comparisons" class="nav-link" data-scroll-target="#exploring-the-data-real-seasonal-and-age-comparisons">Exploring the Data: Real Seasonal and Age Comparisons</a>
+  <ul class="collapse">
+  <li><a href="#seasonal-differences-in-vitamin-d-status" id="toc-seasonal-differences-in-vitamin-d-status" class="nav-link" data-scroll-target="#seasonal-differences-in-vitamin-d-status">Seasonal Differences in Vitamin D Status</a></li>
+  <li><a href="#age-differences-in-vitamin-d-status" id="toc-age-differences-in-vitamin-d-status" class="nav-link" data-scroll-target="#age-differences-in-vitamin-d-status">Age Differences in Vitamin D Status</a></li>
+  </ul></li>
+  <li><a href="#adding-predictive-insight-with-data-science" id="toc-adding-predictive-insight-with-data-science" class="nav-link" data-scroll-target="#adding-predictive-insight-with-data-science">Adding Predictive Insight with Data Science</a></li>
+  <li><a href="#supporting-targeted-public-health-decisions" id="toc-supporting-targeted-public-health-decisions" class="nav-link" data-scroll-target="#supporting-targeted-public-health-decisions">Supporting Targeted Public Health Decisions</a></li>
+  <li><a href="#why-this-is-a-data-science-problem" id="toc-why-this-is-a-data-science-problem" class="nav-link" data-scroll-target="#why-this-is-a-data-science-problem">Why This Is a Data Science Problem</a></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways">Key Takeaways</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -168,8 +207,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="why-vitamin-d-deficiency-is-a-seasonal-issue" class="level2">
 <h2 class="anchored" data-anchor-id="why-vitamin-d-deficiency-is-a-seasonal-issue">Why Vitamin D Deficiency Is a Seasonal Issue</h2>
-<p>Vitamin D synthesis depends on exposure to ultraviolet B (UVB) radiation from sunlight. During summer months, longer days and higher sun angles make it easier for individuals to maintain sufficient vitamin D levels. In contrast, during fall and winter, UVB exposure drops sharply, especially at northern latitudes.</p>
-<p>Data from the Canadian Health Measures Survey (CHMS), published by <a href="https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/11727-eng.htm">Statistics Canada</a>, show clear seasonal differences in vitamin D status. Approximately <strong>40% of Canadians have vitamin D levels below recommended thresholds during winter</strong>, compared to <strong>around 25% during summer</strong>.</p>
+<p>Vitamin D synthesis depends on exposure to ultraviolet B (UVB) radiation from sunlight. During summer months, longer days and higher sun angles make it easier for individuals to maintain sufficient vitamin D levels. In contrast, during fall and winter, UVB exposure drops sharply, especially at northern latitudes. <span class="citation" data-cites="statcan_shedding_light">(<a href="#ref-statcan_shedding_light" role="doc-biblioref">Statistics Canada 2022</a>)</span></p>
+<p>Data from the Canadian Health Measures Survey (CHMS), published by <span class="citation" data-cites="statcan_vitamin_d_levels">(<a href="#ref-statcan_vitamin_d_levels" role="doc-biblioref">Statistics Canada 2013a</a>)</span>, show clear seasonal differences in vitamin D status. Approximately <strong>40% of Canadians have vitamin D levels below recommended thresholds during winter</strong>, compared to <strong>around 25% during summer</strong>.</p>
 <p>Older adults are particularly affected. Several population-level studies report that winter deficiency rates among adults over the age of 65 can exceed <strong>45%</strong>, while rates among younger adults are substantially lower during summer months.</p>
 <p>Vancouver presents an interesting case. While the city experiences relatively mild winters, frequent cloud cover and shorter daylight hours limit effective sunlight exposure. As a result, residents may face sustained seasonal risk even compared to other Canadian cities at similar latitudes.</p>
 <hr>
@@ -188,13 +227,13 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="seasonal-differences-in-vitamin-d-status">Seasonal Differences in Vitamin D Status</h3>
 <p>The chart below shows the <strong>percentage of Canadians at selected vitamin D cut-offs by season</strong>. According to Cycle 2 of the Canadian Health Measures Survey, about <strong>40% of Canadians had vitamin D blood concentrations below the cut-off during winter</strong>, compared with <strong>25% in summer</strong>. This pattern illustrates a strong seasonal effect that simple averages can hide, as a single yearly summary would not make clear when deficiency risk is highest.</p>
 <p><img src="chart 1.gif" class="img-fluid" alt="Percentage of Canadians at selected vitamin D cut-offs, by season"><br>
-<em>Figure: Percentage of Canadians at selected vitamin D cut-offs by season (Statistics Canada).</em> :contentReference<span data-index="0">oaicite:0</span></p>
+<em>Figure: Percentage of Canadians at selected vitamin D cut-offs by season (Statistics Canada).</em> <span class="citation" data-cites="statcan_chart_seasonal">(<a href="#ref-statcan_chart_seasonal" role="doc-biblioref">Statistics Canada 2013c</a>)</span></p>
 </section>
 <section id="age-differences-in-vitamin-d-status" class="level3">
 <h3 class="anchored" data-anchor-id="age-differences-in-vitamin-d-status">Age Differences in Vitamin D Status</h3>
 <p>The chart below shows the <strong>percentage of Canadians above and below a common vitamin D cut-off (50 nmol/L) by age group</strong>. This visualization reveals that certain age groups have higher rates of sufficient vitamin D levels than others. For example, young children and seniors tend to have higher proportions above the cut-off compared with adults aged 20–39.</p>
 <p><img src="chart 2.gif" class="img-fluid" alt="Percentage of Canadians above and below the 50 nmol/L cut-off, by age group"><br>
-<em>Figure: Percentage of Canadians above and below the vitamin D cut-off (50 nmol/L) by age group (Statistics Canada).</em> :contentReference<span data-index="1">oaicite:1</span></p>
+<em>Figure: Percentage of Canadians above and below the vitamin D cut-off (50 nmol/L) by age group (Statistics Canada).</em> <span class="citation" data-cites="statcan_chart_age">(<a href="#ref-statcan_chart_age" role="doc-biblioref">Statistics Canada 2013b</a>)</span></p>
 <p>Together, these charts make seasonal and demographic patterns in vitamin D status immediately clear.</p>
 <hr>
 </section>
@@ -227,9 +266,23 @@ ul.task-list li input[type="checkbox"] {
 <p>Data science allows us to examine trends over time, compare subgroups, and anticipate future risk. Through exploratory analysis, visualization, and simple predictive modeling, data science supports more timely and targeted public health interventions, leading to better-informed decisions and more effective use of resources.</p>
 
 
+
 </section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-statcan_vitamin_d_levels" class="csl-entry" role="listitem">
+Statistics Canada. 2013a. <span>“Vitamin d Blood Levels of Canadians.”</span> 2013. <a href="https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/11727-eng.htm">https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/11727-eng.htm</a>.
+</div>
+<div id="ref-statcan_chart_age" class="csl-entry" role="listitem">
+———. 2013b. <span>“Vitamin d Status of Canadians by Age Group.”</span> 2013. <a href="https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/chart/11727-01-chart1-eng.htm">https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/chart/11727-01-chart1-eng.htm</a>.
+</div>
+<div id="ref-statcan_chart_seasonal" class="csl-entry" role="listitem">
+———. 2013c. <span>“Vitamin d Status of Canadians by Season.”</span> 2013. <a href="https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/chart/11727-01-chart3-eng.htm">https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/chart/11727-01-chart3-eng.htm</a>.
+</div>
+<div id="ref-statcan_shedding_light" class="csl-entry" role="listitem">
+———. 2022. <span>“Shedding Light on Canada’s Vitamin d Levels as We Approach the Shortest Day of the Year.”</span> 2022. <a href="https://www.statcan.gc.ca/o1/en/plus/5095-shedding-light-canadas-vitamin-d-levels-we-approach-shortest-day-year">https://www.statcan.gc.ca/o1/en/plus/5095-shedding-light-canadas-vitamin-d-levels-we-approach-shortest-day-year</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

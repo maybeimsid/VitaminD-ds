@@ -5,6 +5,7 @@ date: "2026-01-14"
 categories: [Vitamin D, Data Science, Public Health]
 image: "vitamind.jpg"
 bibliography: references.bib
+toc: true
 ---
 
 ## Introduction
@@ -17,10 +18,9 @@ In countries like Canada, and particularly in cities such as Vancouver, sunlight
 
 ## Why Vitamin D Deficiency Is a Seasonal Issue
 
-Vitamin D synthesis depends on exposure to ultraviolet B (UVB) radiation from sunlight. During summer months, longer days and higher sun angles make it easier for individuals to maintain sufficient vitamin D levels. In contrast, during fall and winter, UVB exposure drops sharply, especially at northern latitudes.
+Vitamin D synthesis depends on exposure to ultraviolet B (UVB) radiation from sunlight. During summer months, longer days and higher sun angles make it easier for individuals to maintain sufficient vitamin D levels. In contrast, during fall and winter, UVB exposure drops sharply, especially at northern latitudes. [@statcan_shedding_light]
 
-Data from the Canadian Health Measures Survey (CHMS), published by 
-[Statistics Canada](https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/11727-eng.htm),
+Data from the Canadian Health Measures Survey (CHMS), published by [@statcan_vitamin_d_levels],
 show clear seasonal differences in vitamin D status. Approximately **40% of Canadians have vitamin D levels below recommended thresholds during winter**, compared to **around 25% during summer**.
 
 Older adults are particularly affected. Several population-level studies report that winter deficiency rates among adults over the age of 65 can exceed **45%**, while rates among younger adults are substantially lower during summer months.
@@ -48,14 +48,14 @@ A natural first step in a data science workflow is **exploratory data analysis (
 The chart below shows the **percentage of Canadians at selected vitamin D cut-offs by season**. According to Cycle 2 of the Canadian Health Measures Survey, about **40% of Canadians had vitamin D blood concentrations below the cut-off during winter**, compared with **25% in summer**. This pattern illustrates a strong seasonal effect that simple averages can hide, as a single yearly summary would not make clear when deficiency risk is highest.
 
 ![Percentage of Canadians at selected vitamin D cut-offs, by season](chart 1.gif)  
-*Figure: Percentage of Canadians at selected vitamin D cut-offs by season (Statistics Canada).* :contentReference[oaicite:0]{index=0}
+*Figure: Percentage of Canadians at selected vitamin D cut-offs by season (Statistics Canada).* [@statcan_chart_seasonal]
 
 ### Age Differences in Vitamin D Status
 
 The chart below shows the **percentage of Canadians above and below a common vitamin D cut-off (50 nmol/L) by age group**. This visualization reveals that certain age groups have higher rates of sufficient vitamin D levels than others. For example, young children and seniors tend to have higher proportions above the cut-off compared with adults aged 20–39.
 
 ![Percentage of Canadians above and below the 50 nmol/L cut-off, by age group](chart 2.gif)  
-*Figure: Percentage of Canadians above and below the vitamin D cut-off (50 nmol/L) by age group (Statistics Canada).* :contentReference[oaicite:1]{index=1}
+*Figure: Percentage of Canadians above and below the vitamin D cut-off (50 nmol/L) by age group (Statistics Canada).* [@statcan_chart_age]
 
 Together, these charts make seasonal and demographic patterns in vitamin D status immediately clear.
 
