@@ -22,13 +22,11 @@ In countries like Canada, and particularly in cities such as Vancouver, sunlight
 
 Vitamin D synthesis depends on exposure to ultraviolet B (UVB) radiation from sunlight. During summer months, longer days and higher sun angles make it easier for individuals to maintain sufficient vitamin D levels. In contrast, during fall and winter, UVB exposure drops sharply, especially at northern latitudes.
 
-Statistics Canada data from the Canadian Health Measures Survey (CHMS) show clear seasonal differences in vitamin D status. Approximately **40% of Canadians have vitamin D levels below recommended thresholds during winter**, compared to **around 25% during summer**.
+Data from the Canadian Health Measures Survey (CHMS), published by 
+[Statistics Canada](https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/11727-eng.htm),
+show clear seasonal differences in vitamin D status. Approximately **40% of Canadians have vitamin D levels below recommended thresholds during winter**, compared to **around 25% during summer**.
 
-Source:  
-Statistics Canada — *Vitamin D blood levels of Canadians*  
-https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/11727-eng.htm
-
-Older adults are particularly affected. Some studies report that winter deficiency rates among adults over the age of 65 can exceed **45%**, while rates among younger adults are substantially lower during summer months.
+Older adults are particularly affected. Several population-level studies report that winter deficiency rates among adults over the age of 65 can exceed **45%**, while rates among younger adults are substantially lower during summer months.
 
 Vancouver presents an interesting case. While the city experiences relatively mild winters, frequent cloud cover and shorter daylight hours limit effective sunlight exposure. As a result, residents may face sustained seasonal risk even compared to other Canadian cities at similar latitudes.
 
@@ -44,27 +42,25 @@ Data science encourages us to move beyond single summary statistics. By examinin
 
 ---
 
-## Exploring the Data: Seasonal Trends and Comparisons
+## Exploring the Data: Real Seasonal and Age Comparisons
 
-A natural first step in a data science workflow is **exploratory data analysis (EDA)**. In the context of vitamin D deficiency, this might involve grouping vitamin D measurements by month or season and comparing trends across demographic groups.
+A natural first step in a data science workflow is **exploratory data analysis (EDA)**. In the context of vitamin D deficiency in Canada, this involves looking at how vitamin D status varies by factors such as season and age group.
 
-One effective visualization is a **line chart** showing average vitamin D levels across the year.
+### Seasonal Differences in Vitamin D Status
 
-*Figure 1: Line chart showing average vitamin D levels by month, with higher values in summer and a clear decline during winter.*
+The chart below shows the **percentage of Canadians at selected vitamin D cut-offs by season**. According to Cycle 2 of the Canadian Health Measures Survey, about **40% of Canadians had vitamin D blood concentrations below the cut-off during winter**, compared with **25% in summer**. This pattern illustrates a strong seasonal effect that simple averages can hide, as a single yearly summary would not make clear when deficiency risk is highest.
 
-Such a chart typically shows higher levels during summer months, followed by a steady decline in fall and a trough in winter. Plotting separate lines for different age groups often reveals that older adults experience both lower overall levels and steeper seasonal drops.
+![Percentage of Canadians at selected vitamin D cut-offs, by season](https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/chart/11727-01-chart3-eng.htm)  
+*Figure: Percentage of Canadians at selected vitamin D cut-offs by season (Statistics Canada).* :contentReference[oaicite:0]{index=0}
 
-Another useful comparison is geographic. A **bar chart** comparing winter deficiency rates across regions highlights how location influences risk.
+### Age Differences in Vitamin D Status
 
-*Figure 2: Bar chart comparing winter vitamin D deficiency rates across Canadian regions.*
+The chart below shows the **percentage of Canadians above and below a common vitamin D cut-off (50 nmol/L) by age group**. This visualization reveals that certain age groups have higher rates of sufficient vitamin D levels than others. For example, young children and seniors tend to have higher proportions above the cut-off compared with adults aged 20–39.
 
-Statistics Canada reports that severe deficiency (vitamin D levels below 30 nmol/L) more than **doubles during winter** compared to summer.
+![Percentage of Canadians above and below the 50 nmol/L cut-off, by age group](https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/chart/11727-01-chart1-eng.htm)  
+*Figure: Percentage of Canadians above and below the vitamin D cut-off (50 nmol/L) by age group (Statistics Canada).* :contentReference[oaicite:1]{index=1}
 
-Source:  
-Statistics Canada — *Shedding light on Canada’s vitamin D levels as we approach the shortest day of the year*  
-https://www.statcan.gc.ca/o1/en/plus/5095-shedding-light-canadas-vitamin-d-levels-we-approach-shortest-day-year
-
-These visualizations make seasonal risk patterns immediately clear and accessible, even to a non-technical audience.
+Together, these charts make seasonal and demographic patterns in vitamin D status immediately clear.
 
 ---
 
@@ -113,7 +109,7 @@ Data science allows us to examine trends over time, compare subgroups, and antic
 
 ## References
 
-- Statistics Canada. *Vitamin D blood levels of Canadians.*  
+- Statistics Canada. *Vitamin D blood levels of Canadians.* Canadian Health Measures Survey (CHMS).  
   https://www150.statcan.gc.ca/n1/pub/82-624-x/2013001/article/11727-eng.htm
 
 - Statistics Canada. *Shedding light on Canada’s vitamin D levels as we approach the shortest day of the year.*  
